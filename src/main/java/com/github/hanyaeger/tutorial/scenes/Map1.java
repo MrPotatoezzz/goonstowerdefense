@@ -18,20 +18,25 @@ public class Map1 extends DynamicScene {
     public void setupEntities(){
         String devIcon = "sprites/devIcon.png";
         int LastNodeGoon;
-        ArrayList<Node> NodesMap1 = new ArrayList<>();
+        //ArrayList<Node> NodesMap1 = new ArrayList<>();
         Node punt0 = new Node(devIcon, new Coordinate2D(1,1));
         Node punt1 = new Node(devIcon, new Coordinate2D(getWidth() / 2, getHeight() / 2));
-        NodesMap1.add(punt0);
-        NodesMap1.add(punt1);
-        Goon goon = new Goon("sprites/devIcon.png" , new Coordinate2D(0,0));
+        //NodesMap1.add(punt0);
+        //NodesMap1.add(punt1);
+
+        Node NodesMap1[] = {
+                punt0,
+                punt1
+        };
+
+        Goon goon = new Goon("sprites/devIcon.png" , new Coordinate2D(0,0) , NodesMap1);
         addEntity(goon);
 
-//        for (Node node : NodesMap1) {
-//            addEntity(node);
+        for (Node node : NodesMap1) {
+            addEntity(node);
 //            if(goon.getLocation().equals(node)){
 //            LastNodeGoon = node;
 //            }
-//        }
-
+        }
     }
 }

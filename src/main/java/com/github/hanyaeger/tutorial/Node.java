@@ -8,4 +8,9 @@ public class Node extends SpriteEntity {
     public Node(String resource, Coordinate2D initialLocation) {
         super(resource, initialLocation);
     }
+
+    @Override
+    public Coordinate2D getLocationInScene() {
+        return super.getLocationInScene();
+    }
 }
