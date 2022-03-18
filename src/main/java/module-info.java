@@ -8,4 +8,5 @@ module waterworld {
     opens sprites;
     exports com.github.hanyaeger.tutorial.entities.buttons;
     exports com.github.hanyaeger.tutorial.scenes;
+    exports com.github.hanyaeger.tutorial.entities.Goons;
 }
