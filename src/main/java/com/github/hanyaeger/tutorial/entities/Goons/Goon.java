@@ -26,6 +26,7 @@ public class Goon extends DynamicSpriteEntity {
                 lastNodeLocation = nodeList[node].getLocationInScene();
                 nextNodeLocation = nodeList[node + 1].getLocationInScene();
                 System.out.println("Ik sta op punt " + node);
+                System.out.println(nextNodeLocation);
             }
         }
 
