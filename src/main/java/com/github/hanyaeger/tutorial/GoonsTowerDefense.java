@@ -15,6 +15,7 @@ public class GoonsTowerDefense extends YaegerGame {
     public void setupGame() {
         setGameTitle("Goons Tower Defense");
         setSize(new Size(800, 600));
+        System.out.println("gameGestart");
     }
 
     @Override

@@ -9,4 +9,5 @@ module waterworld {
     exports com.github.hanyaeger.tutorial.entities.buttons;
     exports com.github.hanyaeger.tutorial.scenes;
     exports com.github.hanyaeger.tutorial.entities.Goons;
+    exports com.github.hanyaeger.tutorial.entities.map;
 }
