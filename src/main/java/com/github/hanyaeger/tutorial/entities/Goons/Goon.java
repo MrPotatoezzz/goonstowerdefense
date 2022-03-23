@@ -1,5 +1,6 @@
 package com.github.hanyaeger.tutorial.entities.Goons;
 
+import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
@@ -9,7 +10,6 @@ import com.github.hanyaeger.tutorial.entities.map.*;
 
 
 public class Goon extends DynamicSpriteEntity implements Collided {
-
 
     public Goon(String resource, Coordinate2D initialLocation) {
         super(resource, initialLocation);

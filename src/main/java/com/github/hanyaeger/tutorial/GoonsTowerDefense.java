@@ -10,6 +10,7 @@ public class GoonsTowerDefense extends YaegerGame {
     public static void main(String[] args){
         launch(args);
     }
+    private Map1 map = new Map1();
 
     @Override
     public void setupGame() {
@@ -20,6 +21,6 @@ public class GoonsTowerDefense extends YaegerGame {
     @Override
     public void setupScenes() {
         addScene(0, new TitleScreen(this));
-        addScene(1, new Map1());
+        addScene(1, map);
     }
 }
