@@ -24,6 +24,7 @@ public class Bank implements Collided {
 	      goon.remove();
 	    }
 	  }
+
 	@Override
 	public Optional<? extends Node> getNode() {
 		// TODO Auto-generated method stub

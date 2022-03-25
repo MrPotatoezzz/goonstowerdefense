@@ -5,7 +5,9 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
 import com.github.hanyaeger.tutorial.entities.Goons.Goon;
+import com.github.hanyaeger.tutorial.entities.map.Bank;
 import com.github.hanyaeger.tutorial.entities.map.LevelTile;
+import com.github.hanyaeger.tutorial.entities.text.HealthText;
 import com.github.hanyaeger.tutorial.entities.towers.Tower;
 
 
@@ -21,6 +23,11 @@ public class Map1 extends DynamicScene implements TileMapContainer {
 
         Goon goon = new Goon("sprites/devIcon.png", new Coordinate2D(0, 0));
         addEntity(goon);
+
+        HealthText healthText = new HealthText(new Coordinate2D(0, 0));
+        healthText.setHealthText(1000);
+        //healthText.setViewOrder(1);
+        addEntity(healthText);
     }
 
     @Override
