@@ -13,6 +13,7 @@ import com.github.hanyaeger.tutorial.entities.towers.Tower;
 
 public class Map1 extends DynamicScene implements TileMapContainer {
 
+    private Goon goon;
 
     @Override
     public void setupScene() {
@@ -23,6 +24,7 @@ public class Map1 extends DynamicScene implements TileMapContainer {
 
         Goon goon = new Goon("sprites/devIcon.png", new Coordinate2D(0, 0));
         addEntity(goon);
+        this.goon = goon;
 
         HealthText healthText = new HealthText(new Coordinate2D(0, 0));
         healthText.setHealthText(1000);
@@ -39,5 +41,9 @@ public class Map1 extends DynamicScene implements TileMapContainer {
         Tower tower = new Tower(center);
         tower.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         addEntity(tower);
+    }
+
+    public Goon getGoon() {
+        return goon;
     }
 }

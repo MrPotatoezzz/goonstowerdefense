@@ -19,6 +19,7 @@ public class LevelTile extends TileMap {
             addEntity(3, goLeft.class);
             addEntity(4, goRight.class);
             addEntity(5, PlaceableSpace.class, level);
+            addEntity(6, Bank.class, level);
     }
 
 
@@ -30,7 +31,7 @@ public class LevelTile extends TileMap {
                 {5,5,5,5,5,5,5,5,5,5,0,0},
                 {4,4,4,4,2,0,0,0,0,0,0,0},
                 {0,0,0,0,2,0,0,0,0,0,0,0},
-                {0,0,0,0,2,0,0,4,4,4,0,0},
+                {0,0,0,0,2,0,0,4,4,4,0,6},
                 {0,0,0,0,2,0,0,1,0,0,0,0},
                 {0,0,0,0,4,4,4,1,0,0,0,0},
                 {0,0,0,0,0,0,0,0,0,0,0,0},
