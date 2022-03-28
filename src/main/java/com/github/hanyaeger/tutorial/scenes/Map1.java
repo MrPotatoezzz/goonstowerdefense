@@ -13,11 +13,11 @@ import com.github.hanyaeger.tutorial.entities.text.HealthText;
 import com.github.hanyaeger.tutorial.entities.towers.Bullet;
 import com.github.hanyaeger.tutorial.entities.towers.Tower;
 import com.github.hanyaeger.tutorial.spawners.BulletSpawner;
+import com.github.hanyaeger.tutorial.spawners.GoonSpawner;
 
 
 public class Map1 extends DynamicScene implements TileMapContainer, EntitySpawnerContainer {
 
-    private Goon goon;
     private Map1 level = this;
     private LevelTile levelTile = new LevelTile(level);
     private HealthText healthText;
@@ -29,10 +29,13 @@ public class Map1 extends DynamicScene implements TileMapContainer, EntitySpawne
     @Override
     public void setupEntities() {
 
-        goon = new NormalGoon("sprites/devIcon.png", new Coordinate2D(0, 0), levelTile);
-        addEntity(goon);
-        this.goon = goon;
+        //Goon goon = new NormalGoon("sprites/devIcon.png", new Coordinate2D(0, 0));
+        addEntity(spawnGoon());
+    }
 
+    public Goon spawnGoon(){
+        Goon goon = new NormalGoon("sprites/devIcon.png", new Coordinate2D(0, 0));
+        return goon;
     }
 
     @Override
@@ -41,7 +44,7 @@ public class Map1 extends DynamicScene implements TileMapContainer, EntitySpawne
     }
 
     public void createTower(Coordinate2D center) {
-        Tower tower = new Tower(center, goon, this);
+        Tower tower = new Tower(center,this);
         tower.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         addEntity(tower);
         createSpawner(center);
@@ -49,11 +52,11 @@ public class Map1 extends DynamicScene implements TileMapContainer, EntitySpawne
 
     @Override
     public void setupEntitySpawners() {
-
+        addEntitySpawner(new GoonSpawner (8000, level));
     }
 
     void createSpawner(Coordinate2D center){
-        BulletSpawner bulletSpawner = new BulletSpawner(1000, center, goon);
+        BulletSpawner bulletSpawner = new BulletSpawner(1000, center);
         addEntitySpawner(bulletSpawner);
     }
 

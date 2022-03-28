@@ -9,17 +9,19 @@ import com.github.hanyaeger.tutorial.entities.Goons.Goon;
 
 public class Bullet extends DynamicSpriteEntity implements Collided, Collider {
 
-    public Goon goon;
-    public Bullet(String resource, Coordinate2D initialLocation, Goon goon) {
+    public Bullet(String resource, Coordinate2D initialLocation) {
         super(resource, initialLocation);
         setSpeed(5);
         Direction();
-        this.goon = goon;
         System.out.println("er is een bullet gespawned");
     }
 
     public void Direction(){
-        setDirection(Direction.UP);
+        if(getLocationInScene().getY() >= getSceneHeight() / 2){
+            setDirection(Direction.UP);
+        } else{
+            setDirection(Direction.DOWN);
+        }
     }
 
     @Override

@@ -6,17 +6,14 @@ import com.github.hanyaeger.api.scenes.TileMap;
 
 
 
-public class NormalGoon extends Goon {
-    private TileMap levelTile;
-    private Goon goon = this;
+public class NormalGoon extends Goon implements Collider {
     public int health;
 
-    public NormalGoon(String resource, Coordinate2D initialLocation, TileMap levelTile) {
+    public NormalGoon(String resource, Coordinate2D initialLocation) {
         super(resource, initialLocation);
         setHealth();
         setSpeed(1);
         setDirection(Direction.DOWN.getValue());
-        this.levelTile = levelTile;
     }
 
 

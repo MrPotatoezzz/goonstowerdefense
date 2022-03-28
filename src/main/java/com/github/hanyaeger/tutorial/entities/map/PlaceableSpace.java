@@ -26,6 +26,8 @@ public class PlaceableSpace extends SpriteEntity implements  MouseButtonPressedL
 
             level.createTower(center);
             setIsAvailableFalse();
+        }else if(mouseButton.equals(MouseButton.SECONDARY)){
+            level.spawnGoon();
         }
     }
 

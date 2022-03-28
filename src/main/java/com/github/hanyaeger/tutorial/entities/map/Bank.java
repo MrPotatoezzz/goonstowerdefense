@@ -30,7 +30,9 @@ public class Bank extends SpriteEntity implements Collided, Collider {
 	  if (collider instanceof NormalGoon) {
 	      health--;
 		  level.updateHealthText(getHealth());
-	    }
+	    } else{
+		  System.out.println("gehit");
+	  }
 	  }
 
 	  public int getHealth(){
