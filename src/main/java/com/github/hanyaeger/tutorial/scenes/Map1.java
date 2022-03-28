@@ -7,6 +7,7 @@ import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
 import com.github.hanyaeger.tutorial.entities.Goons.Goon;
 import com.github.hanyaeger.tutorial.entities.Goons.NormalGoon;
+import com.github.hanyaeger.tutorial.entities.map.Bank;
 import com.github.hanyaeger.tutorial.entities.map.LevelTile;
 import com.github.hanyaeger.tutorial.entities.text.HealthText;
 import com.github.hanyaeger.tutorial.entities.towers.Bullet;
@@ -19,6 +20,7 @@ public class Map1 extends DynamicScene implements TileMapContainer, EntitySpawne
     private Goon goon;
     private Map1 level = this;
     private LevelTile levelTile = new LevelTile(level);
+    private HealthText healthText;
 
     @Override
     public void setupScene() {
@@ -31,10 +33,6 @@ public class Map1 extends DynamicScene implements TileMapContainer, EntitySpawne
         addEntity(goon);
         this.goon = goon;
 
-        HealthText healthText = new HealthText(new Coordinate2D(0, 0));
-        healthText.setHealthText(1000);
-        //healthText.setViewOrder(1);
-        addEntity(healthText);
     }
 
     @Override
@@ -49,10 +47,6 @@ public class Map1 extends DynamicScene implements TileMapContainer, EntitySpawne
         createSpawner(center);
     }
 
-    public void createBullet(){
-        addEntity(new Bullet("sprites/devIcon.png", new Coordinate2D(0,0), goon));
-    }
-
     @Override
     public void setupEntitySpawners() {
 
@@ -63,7 +57,15 @@ public class Map1 extends DynamicScene implements TileMapContainer, EntitySpawne
         addEntitySpawner(bulletSpawner);
     }
 
-    public Goon getGoon() {
-        return goon;
+    public void setHealthText(int health){
+        HealthText healthText = new HealthText(new Coordinate2D(0, 0));
+        healthText.setHealthText(health);
+        addEntity(healthText);
+        this.healthText = healthText;
+        //healthText.setViewOrder(1);
+    }
+
+    public void updateHealthText(int health){
+        healthText.setHealthText(health);
     }
 }

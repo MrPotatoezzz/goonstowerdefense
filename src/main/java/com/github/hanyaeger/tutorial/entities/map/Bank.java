@@ -13,21 +13,27 @@ import com.github.hanyaeger.tutorial.entities.Goons.*;
 import com.github.hanyaeger.tutorial.scenes.Map1;
 import javafx.scene.Node;
 
-public class Bank extends SpriteEntity implements Collided {
+public class Bank extends SpriteEntity implements Collided, Collider {
 
 	private Map1 level;
+	private int health = 1000;
 
 	public Bank(Coordinate2D initialLocation, Size size, Map1 level) {
 		super("sprites/devIcon.png", initialLocation, size);
 		this.level = level;
+		level.setHealthText(getHealth());
 	}
 
-	int health = 1000;
 	
 	@Override
 	  public void onCollision (Collider collider) {
-	  if (collider instanceof Goon) {
+	  if (collider instanceof NormalGoon) {
 	      health--;
+		  level.updateHealthText(getHealth());
 	    }
+	  }
+
+	  public int getHealth(){
+		return health;
 	  }
 }
