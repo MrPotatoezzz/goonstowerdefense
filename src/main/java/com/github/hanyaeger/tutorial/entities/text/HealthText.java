@@ -9,14 +9,13 @@ import javafx.scene.text.FontWeight;
 
 public class HealthText extends TextEntity {
 	public HealthText(Coordinate2D initialLocation){
-	    super(initialLocation, "test");
+	    super(initialLocation);
 
 	    setFont(Font.font("Roboto",FontWeight.NORMAL, 30));
 	    setFill(Color.DARKBLUE);
 	}
 
-	public void setHealthText(int health) {
-		setText("Health: " + health);
-		System.out.println(health);
+	public void setHealthText(int health){
+	    setText("Health: " + health);
 	}
 }
