@@ -1,13 +1,13 @@
 package com.github.hanyaeger.tutorial.spawners;
 import com.github.hanyaeger.api.entities.EntitySpawner;
-import com.github.hanyaeger.tutorial.scenes.Map1;
+import com.github.hanyaeger.tutorial.scenes.Level;
 
 
 public class GoonSpawner extends EntitySpawner {
 
-    private Map1 level;
+    private Level level;
 
-    public GoonSpawner(long intervalInMs, Map1 level) {
+    public GoonSpawner(long intervalInMs, Level level) {
         super(intervalInMs);
         this.level = level;
     }

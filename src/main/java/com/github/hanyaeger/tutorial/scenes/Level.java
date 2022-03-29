@@ -9,21 +9,18 @@ import com.github.hanyaeger.tutorial.entities.Goons.BuffGoon;
 import com.github.hanyaeger.tutorial.entities.Goons.Goon;
 import com.github.hanyaeger.tutorial.entities.Goons.NormalGoon;
 import com.github.hanyaeger.tutorial.entities.Goons.SpeedyGoon;
-import com.github.hanyaeger.tutorial.entities.map.Bank;
 import com.github.hanyaeger.tutorial.entities.map.LevelTile;
 import com.github.hanyaeger.tutorial.entities.text.HealthText;
-import com.github.hanyaeger.tutorial.entities.towers.Bullet;
 import com.github.hanyaeger.tutorial.entities.towers.Tower;
 import com.github.hanyaeger.tutorial.spawners.BulletSpawner;
 import com.github.hanyaeger.tutorial.spawners.GoonSpawner;
 
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 
-public class Map1 extends DynamicScene implements TileMapContainer, EntitySpawnerContainer {
+public class Level extends DynamicScene implements TileMapContainer, EntitySpawnerContainer {
 
-    private Map1 level = this;
+    private Level level = this;
     private LevelTile levelTile = new LevelTile(level);
     private HealthText healthText;
 

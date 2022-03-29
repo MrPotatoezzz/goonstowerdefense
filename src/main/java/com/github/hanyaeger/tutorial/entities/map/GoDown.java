@@ -6,16 +6,15 @@ import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Direction;
 
 
-public class goUp extends DirectionalTile{
+public class GoDown extends DirectionalTile {
 
-    public goUp(Coordinate2D initialLocation, Size size) {
-        super("sprites/dev.up.png", initialLocation, size);
+    public GoDown(Coordinate2D initialLocation, Size size) {
+        super("sprites/dev.down.png", initialLocation, size);
     }
-
 
     @Override
     public Direction getDirection() {
-        return Direction.UP;
+        return Direction.DOWN;
     }
 
     @Override

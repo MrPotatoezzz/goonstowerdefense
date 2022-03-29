@@ -20,13 +20,13 @@ public abstract class Goon extends DynamicSpriteEntity implements Collided, Coll
     public void onCollision(Collider collider){
         if(collider instanceof Bullet){
             removeHealthPoints();
-        }else if(collider instanceof goRight){
+        }else if(collider instanceof GoRight){
             setDirection(Direction.RIGHT.getValue());
-        }else if(collider instanceof goDown){
+        }else if(collider instanceof GoDown){
             setDirection(Direction.DOWN.getValue());
-        }else if(collider instanceof goUp){
+        }else if(collider instanceof GoUp){
             setDirection(Direction.UP.getValue());
-        }else if(collider instanceof goLeft){
+        }else if(collider instanceof GoLeft){
             setDirection(Direction.LEFT.getValue());
         } else if(collider instanceof Bank){
             setOpacity(0);

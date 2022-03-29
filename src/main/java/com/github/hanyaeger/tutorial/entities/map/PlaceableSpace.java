@@ -4,16 +4,16 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.impl.SpriteEntity;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
-import com.github.hanyaeger.tutorial.scenes.Map1;
+import com.github.hanyaeger.tutorial.scenes.Level;
 import javafx.scene.input.MouseButton;
 
 public class PlaceableSpace extends SpriteEntity implements  MouseButtonPressedListener{
 
 
-    private Map1 level;
+    private Level level;
     private boolean isAvailable = true;
 
-    public PlaceableSpace(Coordinate2D initialLocation, Size size, Map1 level) {
+    public PlaceableSpace(Coordinate2D initialLocation, Size size, Level level) {
         super("sprites/devIcon.png", initialLocation, size);
         this.level = level;
     }

@@ -3,14 +3,14 @@ import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.SpriteEntity;
-import com.github.hanyaeger.tutorial.scenes.Map1;
+import com.github.hanyaeger.tutorial.scenes.Level;
 
 
 public class Tower extends SpriteEntity implements Collider {
 
-private Map1 level;
+private Level level;
 
-    public Tower(Coordinate2D initialLocation, Map1 level) {
+    public Tower(Coordinate2D initialLocation, Level level) {
         super("sprites/tower.png", initialLocation);
         setAnchorPoint(AnchorPoint.CENTER_CENTER);
     }

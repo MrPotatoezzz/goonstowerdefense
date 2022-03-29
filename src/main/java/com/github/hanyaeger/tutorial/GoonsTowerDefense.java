@@ -2,7 +2,7 @@ package com.github.hanyaeger.tutorial;
 
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
-import com.github.hanyaeger.tutorial.scenes.Map1;
+import com.github.hanyaeger.tutorial.scenes.Level;
 import com.github.hanyaeger.tutorial.scenes.TitleScreen;
 
 public class GoonsTowerDefense extends YaegerGame {
@@ -10,7 +10,7 @@ public class GoonsTowerDefense extends YaegerGame {
     public static void main(String[] args){
         launch(args);
     }
-    private Map1 map = new Map1();
+    private Level map = new Level();
 
     @Override
     public void setupGame() {
