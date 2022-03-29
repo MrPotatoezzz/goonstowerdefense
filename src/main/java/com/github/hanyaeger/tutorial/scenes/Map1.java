@@ -5,8 +5,10 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.EntitySpawnerContainer;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.scenes.TileMapContainer;
+import com.github.hanyaeger.tutorial.entities.Goons.BuffGoon;
 import com.github.hanyaeger.tutorial.entities.Goons.Goon;
 import com.github.hanyaeger.tutorial.entities.Goons.NormalGoon;
+import com.github.hanyaeger.tutorial.entities.Goons.SpeedyGoon;
 import com.github.hanyaeger.tutorial.entities.map.Bank;
 import com.github.hanyaeger.tutorial.entities.map.LevelTile;
 import com.github.hanyaeger.tutorial.entities.text.HealthText;
@@ -14,6 +16,9 @@ import com.github.hanyaeger.tutorial.entities.towers.Bullet;
 import com.github.hanyaeger.tutorial.entities.towers.Tower;
 import com.github.hanyaeger.tutorial.spawners.BulletSpawner;
 import com.github.hanyaeger.tutorial.spawners.GoonSpawner;
+
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 
 public class Map1 extends DynamicScene implements TileMapContainer, EntitySpawnerContainer {
@@ -33,9 +38,23 @@ public class Map1 extends DynamicScene implements TileMapContainer, EntitySpawne
         addEntity(spawnGoon());
     }
 
+    /*
+    The random number generator code was found on Stack overflow: https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
+
+     */
+
     public Goon spawnGoon(){
-        Goon goon = new NormalGoon("sprites/devIcon.png", new Coordinate2D(0, 0));
-        return goon;
+        int randomNum = ThreadLocalRandom.current().nextInt(0, 5 + 1);
+        System.out.println(randomNum);
+        if(randomNum == 2){
+            Goon goon = new BuffGoon("sprites/devIcon.png", new Coordinate2D(0, 0));
+            return goon;
+        } else if(randomNum == 4){
+            Goon goon = new SpeedyGoon("sprites/devIcon.png", new Coordinate2D(0, 0));
+            return goon;
+        }
+            Goon goon = new NormalGoon("sprites/devIcon.png", new Coordinate2D(0, 0));
+            return goon;
     }
 
     @Override
@@ -52,7 +71,7 @@ public class Map1 extends DynamicScene implements TileMapContainer, EntitySpawne
 
     @Override
     public void setupEntitySpawners() {
-        addEntitySpawner(new GoonSpawner (8000, level));
+        addEntitySpawner(new GoonSpawner (4000, level));
     }
 
     void createSpawner(Coordinate2D center){
