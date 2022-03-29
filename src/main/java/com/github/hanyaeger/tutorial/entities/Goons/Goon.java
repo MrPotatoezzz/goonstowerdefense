@@ -39,7 +39,11 @@ public abstract class Goon extends DynamicSpriteEntity implements Collided, Coll
     public void killGoonInstantly(){
         this.remove();
     }
-
+    /*
+    the following function getHealth(), RemoveHealthPoints() and setHealth force the programmer to use these function in its child class,
+    making the goons actually function, setHealth is used hor setting the default health at the start of the goons life, removeHealthpoint removes healthpoints
+    when it is called, and getHealth returns the current health of the entity and can be used to see if an entity has 0 health and should be killed.
+    */
     public  abstract int getHealth();
 
     public  abstract int removeHealthPoints();

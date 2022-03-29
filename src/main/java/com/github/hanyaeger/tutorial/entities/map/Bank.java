@@ -24,6 +24,9 @@ public class Bank extends SpriteEntity implements Collided, Collider {
 		level.setHealthText(getHealth());
 	}
 
+	/*
+	This code subtracts health from the bank entity when a goon hits it, it also calls the update of the health text
+	 */
 	
 	@Override
 	  public void onCollision (Collider collider) {

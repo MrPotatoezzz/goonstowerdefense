@@ -12,6 +12,7 @@ public class LevelTile extends TileMap {
         this.level = level;
     }
 
+
     @Override
     public void setupEntities() {
             addEntity(1, goUp.class);
