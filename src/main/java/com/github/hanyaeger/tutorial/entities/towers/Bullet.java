@@ -4,10 +4,12 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.Direction;
+import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
+import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.tutorial.entities.Goons.Goon;
 
-public class Bullet extends DynamicSpriteEntity implements Collided, Collider {
+public class Bullet extends DynamicSpriteEntity implements Collided, Collider, SceneBorderCrossingWatcher {
 
     public Bullet(String resource, Coordinate2D initialLocation) {
         super(resource, initialLocation);
@@ -29,5 +31,11 @@ public class Bullet extends DynamicSpriteEntity implements Collided, Collider {
         if(collider instanceof Goon){
             this.remove();
         }
+    }
+
+    @Override
+    public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
+        this.remove();
+        System.out.println("bullet be gone");
     }
 }

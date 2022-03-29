@@ -3,15 +3,16 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.Direction;
+import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
+import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.tutorial.entities.map.*;
 import com.github.hanyaeger.tutorial.entities.towers.Bullet;
 
 
-public abstract class Goon extends DynamicSpriteEntity implements Collided, Collider {
+public abstract class Goon extends DynamicSpriteEntity implements Collided, Collider, SceneBorderCrossingWatcher {
 
-
-    protected Goon(String resource, Coordinate2D initialLocation) {
+    public Goon(String resource, Coordinate2D initialLocation) {
         super(resource, initialLocation);
     }
 
@@ -27,9 +28,8 @@ public abstract class Goon extends DynamicSpriteEntity implements Collided, Coll
             setDirection(Direction.UP.getValue());
         }else if(collider instanceof goLeft){
             setDirection(Direction.LEFT.getValue());
-        } else if(collider instanceof RemoveGoonTile){
-            killGoonInstantly();
-            System.out.println("goon dood");
+        } else if(collider instanceof Bank){
+            setOpacity(0);
         }
 
         if(getHealth() == 0){
@@ -45,4 +45,8 @@ public abstract class Goon extends DynamicSpriteEntity implements Collided, Coll
     public  abstract int removeHealthPoints();
 
     public abstract int setHealth();
+
+    public void notifyBoundaryCrossing(SceneBorder border){
+        killGoonInstantly();
+    }
 }

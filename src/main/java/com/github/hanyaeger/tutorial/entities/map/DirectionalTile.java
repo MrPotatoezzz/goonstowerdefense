@@ -11,6 +11,7 @@ public abstract class DirectionalTile extends SpriteEntity implements Collider {
 
     public DirectionalTile(String resource , Coordinate2D initialLocation, Size size) {
         super(resource, initialLocation, size);
+        setOpacity(0);
     }
 
     public abstract Direction getDirection();
