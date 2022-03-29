@@ -40,7 +40,7 @@ public class Map1 extends DynamicScene implements TileMapContainer, EntitySpawne
 
     /*
     The random number generator code was found on Stack overflow: https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
-
+    The random number generator chooses a random number and with this random number a goon wil be chosen to spawn.
      */
 
     public Goon spawnGoon(){

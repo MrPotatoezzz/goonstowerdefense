@@ -1,6 +1,5 @@
 package com.github.hanyaeger.tutorial.spawners;
 import com.github.hanyaeger.api.entities.EntitySpawner;
-import com.github.hanyaeger.tutorial.entities.Goons.Goon;
 import com.github.hanyaeger.tutorial.scenes.Map1;
 
 
