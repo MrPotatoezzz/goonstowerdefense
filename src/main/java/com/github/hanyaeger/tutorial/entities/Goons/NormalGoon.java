@@ -10,7 +10,7 @@ public class NormalGoon extends Goon implements Collider {
     public int health;
 
     public NormalGoon(String resource, Coordinate2D initialLocation) {
-        super(resource, initialLocation);
+        super("sprites/normalgoon.png", initialLocation);
         setHealth();
         setSpeed(1);
         setDirection(Direction.DOWN.getValue());

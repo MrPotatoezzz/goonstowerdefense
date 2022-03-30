@@ -11,7 +11,7 @@ public class Tower extends SpriteEntity implements Collider {
 private Level level;
 
     public Tower(Coordinate2D initialLocation, Level level) {
-        super("sprites/tower.png", initialLocation);
+        super("sprites/donutcop.png", initialLocation);
         setAnchorPoint(AnchorPoint.CENTER_CENTER);
     }
 

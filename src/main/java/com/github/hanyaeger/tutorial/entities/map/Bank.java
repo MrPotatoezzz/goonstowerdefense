@@ -15,7 +15,7 @@ public class Bank extends SpriteEntity implements Collided, Collider {
 	private int health = 1000;
 
 	public Bank(Coordinate2D initialLocation, Size size, Level level) {
-		super("sprites/devIcon.png", initialLocation, size);
+		super("sprites/bank.png", initialLocation, size);
 		this.level = level;
 		level.setHealthText(getHealth());
 	}

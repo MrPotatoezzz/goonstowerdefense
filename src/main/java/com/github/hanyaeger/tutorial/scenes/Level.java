@@ -26,6 +26,7 @@ public class Level extends DynamicScene implements TileMapContainer, EntitySpawn
 
     @Override
     public void setupScene() {
+        setBackgroundImage("backgrounds/grass.jpg");
     }
 
     @Override

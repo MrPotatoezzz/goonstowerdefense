@@ -8,7 +8,7 @@ public class SpeedyGoon extends Goon{
     private int health;
 
     public SpeedyGoon(String resource, Coordinate2D initialLocation) {
-        super(resource, initialLocation);
+        super("sprites/fastgoon.png", initialLocation);
         setHealth();
         setSpeed(2);
         setDirection(Direction.DOWN);

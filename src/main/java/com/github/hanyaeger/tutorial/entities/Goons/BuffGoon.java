@@ -8,7 +8,7 @@ public class BuffGoon extends Goon{
     private int health;
 
     public BuffGoon(String resource, Coordinate2D initialLocation) {
-        super(resource, initialLocation);
+        super("sprites/buffgoon.png", initialLocation);
         setHealth();
         setSpeed(0.5);
         setDirection(Direction.DOWN);
