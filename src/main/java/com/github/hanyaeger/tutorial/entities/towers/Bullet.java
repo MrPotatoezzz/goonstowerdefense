@@ -1,5 +1,6 @@
 package com.github.hanyaeger.tutorial.entities.towers;
 
+import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
@@ -15,6 +16,7 @@ public class Bullet extends DynamicSpriteEntity implements Collided, Collider, S
         super(resource, initialLocation);
         setSpeed(5);
         Direction();
+        setAnchorPoint(AnchorPoint.CENTER_CENTER);
         System.out.println("er is een bullet gespawned");
     }
 

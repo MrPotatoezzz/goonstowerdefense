@@ -14,7 +14,7 @@ public class PlaceableSpace extends SpriteEntity implements  MouseButtonPressedL
     private boolean isAvailable = true;
 
     public PlaceableSpace(Coordinate2D initialLocation, Size size, Level level) {
-        super("sprites/devIcon.png", initialLocation, size);
+        super("sprites/PlaceableSpace.png", initialLocation, size);
         this.level = level;
     }
 

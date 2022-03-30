@@ -1,5 +1,6 @@
 package com.github.hanyaeger.tutorial.spawners;
 
+import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.EntitySpawner;
 import com.github.hanyaeger.tutorial.entities.Goons.Goon;
@@ -15,6 +16,6 @@ public class BulletSpawner extends EntitySpawner {
 
     @Override
     protected void spawnEntities() {
-        spawn(new Bullet("sprites/devIcon.png", towerLocation));
+        spawn(new Bullet("sprites/Bullet.png", towerLocation));
     }
 }
