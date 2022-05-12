@@ -23,10 +23,10 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 
-public class Level extends DynamicScene implements /*TileMapContainer,*/ EntitySpawnerContainer {
+public class Level extends DynamicScene implements EntitySpawnerContainer {
 
     private Level level = this;
-    private LevelTile levelTile = new LevelTile(level);
+
     private HealthText healthText;
     ArrayList<DirectionalTile> DirectionalTiles = new ArrayList<DirectionalTile>();
     private  int[][] Tiles;
@@ -39,13 +39,10 @@ public class Level extends DynamicScene implements /*TileMapContainer,*/ EntityS
 
         DirectionalTiles.add(d);
         createDirectianalTiles();
-//        this.DirectionalTiles = DirectionalTiles;
     }
 
     @Override
     public void setupEntities() {
-
-        //Goon goon = new NormalGoon("sprites/devIcon.png", new Coordinate2D(0, 0));
         addEntity(spawnGoon());
     }
 
@@ -68,10 +65,6 @@ public class Level extends DynamicScene implements /*TileMapContainer,*/ EntityS
             return goon;
     }
 
-//    @Override
-//    public void setupTileMaps() {
-//        addTileMap(levelTile);
-//    }
 
     public void createTower(Coordinate2D center) {
         Tower tower = new Tower(center,this);
@@ -95,7 +88,6 @@ public class Level extends DynamicScene implements /*TileMapContainer,*/ EntityS
         healthText.setHealthText(health);
         addEntity(healthText);
         this.healthText = healthText;
-        //healthText.setViewOrder(1);
     }
 
     public void updateHealthText(int health){
