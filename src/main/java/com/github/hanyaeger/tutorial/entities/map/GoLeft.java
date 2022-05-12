@@ -13,7 +13,7 @@ public class GoLeft extends DirectionalTile {
     }
 
     @Override
-    public Direction getDirection() {
+    public Direction getNewDirection() {
         return Direction.LEFT;
     }
 

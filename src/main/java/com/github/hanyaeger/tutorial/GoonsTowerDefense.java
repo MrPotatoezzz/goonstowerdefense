@@ -11,11 +11,13 @@ public class GoonsTowerDefense extends YaegerGame {
         launch(args);
     }
     private Level map = new Level();
+    public static int SceneWidth = 800;
+    public static int SceneHeight = 600;
 
     @Override
     public void setupGame() {
         setGameTitle("Goons Tower Defense");
-        setSize(new Size(800, 600));
+        setSize(new Size(SceneWidth, SceneHeight));
     }
 
     @Override

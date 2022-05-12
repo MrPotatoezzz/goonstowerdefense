@@ -9,10 +9,12 @@ public class GoRight extends DirectionalTile {
 
     public GoRight(Coordinate2D initialLocation, Size size) {
         super("sprites/dev.right.png", initialLocation, size);
+        System.out.println(initialLocation);
     }
 
     @Override
-    public Direction getDirection() {
+    public Direction getNewDirection() {
+
         return Direction.RIGHT;
     }
 

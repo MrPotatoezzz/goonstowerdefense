@@ -13,7 +13,7 @@ public class GoDown extends DirectionalTile {
     }
 
     @Override
-    public Direction getDirection() {
+    public Direction getNewDirection() {
         return Direction.DOWN;
     }
 

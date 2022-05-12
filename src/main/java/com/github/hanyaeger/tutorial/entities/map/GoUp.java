@@ -14,7 +14,7 @@ public class GoUp extends DirectionalTile{
 
 
     @Override
-    public Direction getDirection() {
+    public Direction getNewDirection() {
         return Direction.UP;
     }
 
