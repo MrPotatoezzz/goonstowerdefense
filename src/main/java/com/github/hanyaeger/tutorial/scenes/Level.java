@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 
-public class Level extends DynamicScene implements TileMapContainer, EntitySpawnerContainer {
+public class Level extends DynamicScene implements /*TileMapContainer,*/ EntitySpawnerContainer {
 
     private Level level = this;
     private LevelTile levelTile = new LevelTile(level);
@@ -68,10 +68,10 @@ public class Level extends DynamicScene implements TileMapContainer, EntitySpawn
             return goon;
     }
 
-    @Override
-    public void setupTileMaps() {
-        addTileMap(levelTile);
-    }
+//    @Override
+//    public void setupTileMaps() {
+//        addTileMap(levelTile);
+//    }
 
     public void createTower(Coordinate2D center) {
         Tower tower = new Tower(center,this);
@@ -121,23 +121,29 @@ public class Level extends DynamicScene implements TileMapContainer, EntitySpawn
                 {5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}
         };
         for (int i = 0; i < Tiles.length; i++) {
-            for (int j = 0; j < 14; j++) {
+            for (int j = 0; j < 18; j++) {
                 if (Tiles[i][j] == 4) {
-                    GoRight R = new GoRight(new Coordinate2D((GoonsTowerDefense.SceneWidth / 18) * j , (GoonsTowerDefense.SceneHeight / 15) * i), new Size(GoonsTowerDefense.SceneWidth / Tiles.length , GoonsTowerDefense.SceneHeight / 15));
+                    GoRight R = new GoRight(new Coordinate2D((GoonsTowerDefense.SceneWidth / 18) * j , (GoonsTowerDefense.SceneHeight / Tiles.length ) * i), new Size(GoonsTowerDefense.SceneWidth / Tiles.length , GoonsTowerDefense.SceneHeight / 15));
                     addEntity(R);
                     DirectionalTiles.add(R);
                 } else if(Tiles[i][j] == 1){
-                    GoUp U = new GoUp(new Coordinate2D((GoonsTowerDefense.SceneWidth / 18) * j , (GoonsTowerDefense.SceneHeight / 15) * i), new Size(GoonsTowerDefense.SceneWidth / Tiles.length , GoonsTowerDefense.SceneHeight / 15));
+                    GoUp U = new GoUp(new Coordinate2D((GoonsTowerDefense.SceneWidth / 18) * j , (GoonsTowerDefense.SceneHeight / Tiles.length ) * i), new Size(GoonsTowerDefense.SceneWidth / Tiles.length , GoonsTowerDefense.SceneHeight / 15));
                     addEntity(U);
                     DirectionalTiles.add(U);
                 } else if(Tiles[i][j] == 3){
-                GoLeft L = new GoLeft(new Coordinate2D((GoonsTowerDefense.SceneWidth / 18) * j , (GoonsTowerDefense.SceneHeight / 15) * i), new Size(GoonsTowerDefense.SceneWidth / Tiles.length , GoonsTowerDefense.SceneHeight / 15));
+                GoLeft L = new GoLeft(new Coordinate2D((GoonsTowerDefense.SceneWidth / 18) * j , (GoonsTowerDefense.SceneHeight / Tiles.length ) * i), new Size(GoonsTowerDefense.SceneWidth / Tiles.length , GoonsTowerDefense.SceneHeight / 15));
                 addEntity(L);
                     DirectionalTiles.add(L);
                 } else if(Tiles[i][j] == 2){
-                    GoDown D = new GoDown(new Coordinate2D((GoonsTowerDefense.SceneWidth / 18) * j , (GoonsTowerDefense.SceneHeight / 15) * i), new Size(GoonsTowerDefense.SceneWidth / Tiles.length , GoonsTowerDefense.SceneHeight / 15));
+                    GoDown D = new GoDown(new Coordinate2D((GoonsTowerDefense.SceneWidth / 18) * j , (GoonsTowerDefense.SceneHeight / Tiles.length ) * i), new Size(GoonsTowerDefense.SceneWidth / Tiles.length , GoonsTowerDefense.SceneHeight / 15));
                     addEntity(D);
                     DirectionalTiles.add(D);
+                } else if((Tiles[i][j] == 5)){
+                    PlaceableSpace P = new PlaceableSpace(new Coordinate2D((GoonsTowerDefense.SceneWidth / 18) * j , (GoonsTowerDefense.SceneHeight / Tiles.length ) * i), new Size(GoonsTowerDefense.SceneWidth / Tiles.length , GoonsTowerDefense.SceneHeight / 15), level);
+                    addEntity(P);
+                }else if((Tiles[i][j] == 6)){
+                    Bank B = new Bank(new Coordinate2D((GoonsTowerDefense.SceneWidth / 18) * j , (GoonsTowerDefense.SceneHeight / Tiles.length ) * i), new Size(GoonsTowerDefense.SceneWidth / Tiles.length , GoonsTowerDefense.SceneHeight / 15), level);
+                    addEntity(B);
                 }
             }
         }

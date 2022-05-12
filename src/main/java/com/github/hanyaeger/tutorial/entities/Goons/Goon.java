@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public abstract class Goon extends DynamicSpriteEntity implements Collided, Collider, SceneBorderCrossingWatcher {
 
     private ArrayList<DirectionalTile> DirectionalTiles;
+    public boolean hasHitBank = false;
 
     public Goon(String resource, Coordinate2D initialLocation, ArrayList<DirectionalTile> DirectionalTiles) {
         super(resource, initialLocation);
@@ -24,10 +25,8 @@ public abstract class Goon extends DynamicSpriteEntity implements Collided, Coll
     @Override
     public void onCollision(Collider collider){
 
-//        if(collider instanceof DirectionalTile){
-//            System.out.println(DirectionalTile.getNewDirection());
-//            setDirection(DirectionalTile.getNewDirection());
-//        }
+//        if the object the goon collides with is from the type DirectionalTiles it will get the direction from
+//        a method off the tile witch guides the goon to the correct direction.
 
         for (int i = 0; i < DirectionalTiles.size() - 1 ; i++) {
             if(collider.equals(DirectionalTiles.get(i))){
@@ -35,20 +34,11 @@ public abstract class Goon extends DynamicSpriteEntity implements Collided, Coll
             }
         }
 
-
         if(collider instanceof Bullet){
             removeHealthPoints();
-//        }else if(collider instanceof GoRight){
-//            setDirection(Direction.RIGHT.getValue());
-//        }else if(collider instanceof GoDown){
-//            setDirection(Direction.DOWN.getValue());
-//        }else if(collider instanceof GoUp){
-//            setDirection(Direction.UP.getValue());
-//        }else if(collider instanceof GoLeft){
-//            setDirection(Direction.LEFT.getValue());
         } else if(collider instanceof Bank){
             setOpacity(0);
-
+            hasHitBank = true;
         }
 
         if(getHealth() == 0){
@@ -63,6 +53,7 @@ public abstract class Goon extends DynamicSpriteEntity implements Collided, Coll
     making the goons actually function, setHealth is used hor setting the default health at the start of the goons life, removeHealthpoint removes healthpoints
     when it is called, and getHealth returns the current health of the entity and can be used to see if an entity has 0 health and should be killed.
     */
+
     public  abstract int getHealth();
 
     public  abstract int removeHealthPoints();

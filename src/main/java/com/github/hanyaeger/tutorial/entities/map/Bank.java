@@ -26,7 +26,7 @@ public class Bank extends SpriteEntity implements Collided, Collider {
 	
 	@Override
 	  public void onCollision (Collider collider) {
-	  if (collider instanceof NormalGoon) {
+	  if (collider instanceof Goon) {
 	      health--;
 		  level.updateHealthText(getHealth());
 	    } else{
